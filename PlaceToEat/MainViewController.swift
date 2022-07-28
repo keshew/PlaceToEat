@@ -9,7 +9,8 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    var cafeTest = ["TramCafe","yChurki"]
+
+    var places = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +22,19 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cafeTest.count
+        return places.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.imageOfPlace?.image = UIImage(named: cafeTest[indexPath.row])
-        cell.nameLabel?.text = cafeTest[indexPath.row]
+        cell.nameLabel?.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        cell.imageOfPlace?.image = UIImage(named: places[indexPath.row].image)
+        
+        //круглые фотки
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.height / 2  
         cell.imageOfPlace?.clipsToBounds = true
         
@@ -38,9 +43,7 @@ class MainViewController: UITableViewController {
     
     // MARK: TableView Delegate
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
+   
 
      /*
     // MARK: - Navigation
@@ -52,4 +55,8 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+        
+    }
+    
 }
