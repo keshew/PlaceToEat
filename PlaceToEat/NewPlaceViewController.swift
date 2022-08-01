@@ -13,6 +13,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
     var imageIsChanged = false
     var currentPlace : Place?
     
+    @IBOutlet var ratingControl: RationgControl!
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var placeImage: UIImageView!
     @IBOutlet var placeName: UITextField!
@@ -91,7 +92,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
-            
+            ratingControl.rating = Int(currentPlace!.rating)
         }
     }
     
@@ -152,7 +153,11 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
             }
             
             let imageData = image?.pngData()
-            let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData)
+            let newPlace = Place(name: placeName.text!,
+                                 location: placeLocation.text,
+                                 type: placeType.text,
+                                 imageData: imageData,
+                                 rating: Double(ratingControl.rating))
             
             if currentPlace != nil {
                 try! realm.write {
@@ -160,6 +165,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
                     currentPlace?.location = newPlace.location
                     currentPlace?.type = newPlace.type
                     currentPlace?.imageData = newPlace.imageData
+                    currentPlace?.rating = newPlace.rating
                 }
             } else {
                 storageManager.saveObjc(newPlace)
