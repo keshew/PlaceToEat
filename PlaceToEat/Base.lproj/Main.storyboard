@@ -153,7 +153,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-8n-Ydi" customClass="RationgControl" customModule="PlaceToEat" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-8n-Ydi" customClass="RationgControl" customModule="PlaceToEat" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
@@ -361,6 +361,11 @@
             <point key="canvasLocation" x="1178" y="-692"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="f4y-8n-Ydi">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="ex4-vz-aIb"/>
     </inferredMetricsTieBreakers>
