@@ -260,6 +260,9 @@
                                     <segment title="Date"/>
                                     <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sotrSelection:" destination="L5x-gE-GfL" eventType="valueChanged" id="TrU-Da-fye"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3es-MZ-wmV"/>
@@ -275,7 +278,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Place to Eat" largeTitleDisplayMode="never" id="QC5-Eu-ZNT">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="YXe-if-iEr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="YXe-if-iEr">
+                            <connections>
+                                <action selector="reversedSotring:" destination="L5x-gE-GfL" id="MjE-Pt-FsN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oTU-Bb-Oeg">
                             <connections>
                                 <segue destination="23F-Ve-Ujr" kind="presentation" id="3ef-j1-bZA"/>
@@ -283,6 +290,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversedSotrButton" destination="YXe-if-iEr" id="Kdo-5R-OsC"/>
+                        <outlet property="segmentedControl" destination="eJK-U8-cYt" id="MKs-sA-gIv"/>
                         <outlet property="tableView" destination="CGZ-Qf-Cug" id="EvW-Jg-W5j"/>
                     </connections>
                 </viewController>

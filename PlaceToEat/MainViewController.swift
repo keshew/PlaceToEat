@@ -11,9 +11,12 @@ import RealmSwift
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    @IBOutlet var reversedSotrButton: UIBarButtonItem!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
     var places: Results<Place>!
+    var ascendingSotring = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,4 +96,35 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
+    @IBAction func sotrSelection(_ sender: UISegmentedControl) {
+        
+        sorting()
+    }
+    
+    @IBAction func reversedSotring(_ sender: Any) {
+        
+        ascendingSotring.toggle()
+        
+        if ascendingSotring == true {
+            reversedSotrButton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reversedSotrButton.image = #imageLiteral(resourceName: "ZA")
+        }
+        sorting()
+    }
+    
+    
+    private func sorting() {
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date", ascending: ascendingSotring)
+        } else {
+            places = places.sorted(byKeyPath: "name", ascending: ascendingSotring)
+        }
+        tableView.reloadData()
+    }
 }
+    
+    
+
