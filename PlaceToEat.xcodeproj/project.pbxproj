@@ -18,6 +18,7 @@
 		86DAC1B9289121C80074A526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DAC1B8289121C80074A526 /* Assets.xcassets */; };
 		86DAC1BC289121C80074A526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DAC1BA289121C80074A526 /* LaunchScreen.storyboard */; };
 		86DAC1C4289122A90074A526 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DAC1C3289122A90074A526 /* MainViewController.swift */; };
+		86DD0CC228981F6200AE1293 /* RationgControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD0CC128981F6200AE1293 /* RationgControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		86DAC1BB289121C80074A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86DAC1BD289121C80074A526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DAC1C3289122A90074A526 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		86DD0CC128981F6200AE1293 /* RationgControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RationgControl.swift; sourceTree = "<group>"; };
 		AA4EF455E8AEA95127CB6BC9 /* Pods_PlaceToEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceToEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 		86DAC1AE289121C70074A526 /* PlaceToEat */ = {
 			isa = PBXGroup;
 			children = (
+				86DD0CC128981F6200AE1293 /* RationgControl.swift */,
 				863DA9A92893D47C00783A34 /* storageManager.swift */,
 				861260832892F65700F6FAA4 /* NewPlaceViewController.swift */,
 				86DAC1AF289121C70074A526 /* AppDelegate.swift */,
@@ -222,6 +225,7 @@
 				861260842892F65700F6FAA4 /* NewPlaceViewController.swift in Sources */,
 				86DAC1B2289121C70074A526 /* SceneDelegate.swift in Sources */,
 				867714612891346200F1DA5A /* PlaceModel.swift in Sources */,
+				86DD0CC228981F6200AE1293 /* RationgControl.swift in Sources */,
 				8677145F2891301500F1DA5A /* CustomTableViewCell.swift in Sources */,
 				86DAC1C4289122A90074A526 /* MainViewController.swift in Sources */,
 				863DA9AA2893D47C00783A34 /* storageManager.swift in Sources */,
