@@ -13,5 +13,10 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var starRatingOnMain: RationgControl! {
+        didSet {
+            starRatingOnMain.isUserInteractionEnabled = false
+        }
+    }
     
 }
