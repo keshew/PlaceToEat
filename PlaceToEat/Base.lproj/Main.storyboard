@@ -32,11 +32,26 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                     <color key="backgroundColor" red="0.87058818339999999" green="0.87058818339999999" blue="0.87058818339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ5-o2-88q">
+                                                    <rect key="frame" x="316" y="189" width="78" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="WXO-ro-DkD"/>
+                                                        <constraint firstAttribute="height" constant="50" id="beb-gh-9xT"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="map" title=" "/>
+                                                    <connections>
+                                                        <segue destination="Rso-NX-iCc" kind="showDetail" identifier="showMap" id="39p-Hr-u7t"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="PZ5-o2-88q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hfJ-cf-SqG" secondAttribute="leading" constant="20" symbolic="YES" id="5kH-uh-HSC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PZ5-o2-88q" secondAttribute="trailing" id="JWK-VE-NID"/>
                                                 <constraint firstItem="PzP-PD-8hi" firstAttribute="leading" secondItem="hfJ-cf-SqG" secondAttribute="leading" id="OH1-rD-b72"/>
                                                 <constraint firstItem="PzP-PD-8hi" firstAttribute="top" secondItem="hfJ-cf-SqG" secondAttribute="top" id="QBE-jx-gdC"/>
                                                 <constraint firstAttribute="bottom" secondItem="PzP-PD-8hi" secondAttribute="bottom" id="czd-G1-45C"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PZ5-o2-88q" secondAttribute="bottom" id="ot3-lX-VSx"/>
                                                 <constraint firstAttribute="trailing" secondItem="PzP-PD-8hi" secondAttribute="trailing" id="uMw-9g-Eyb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -201,6 +216,47 @@
                 <exit id="SIE-wf-MBk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1233" y="11"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="LmM-80-Ne7">
+            <objects>
+                <viewController id="Rso-NX-iCc" customClass="MapViewController" customModule="PlaceToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FKf-lL-1mf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KFs-x7-znj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQH-2Q-neX">
+                                <rect key="frame" x="316" y="84" width="88" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="HMR-gA-Lhj"/>
+                                    <constraint firstAttribute="height" constant="50" id="WLY-Sf-3Cm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="imgonline-com-ua-Transparent-backgr-0C6JDJWV0bF" title=" "/>
+                                <connections>
+                                    <action selector="closeVC" destination="Rso-NX-iCc" eventType="touchUpInside" id="eaG-uw-uro"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xSH-Nm-GiE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BQH-2Q-neX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xSH-Nm-GiE" secondAttribute="leading" symbolic="YES" id="EjT-7C-zuS"/>
+                            <constraint firstItem="xSH-Nm-GiE" firstAttribute="trailing" secondItem="BQH-2Q-neX" secondAttribute="trailing" constant="10" id="GJx-OA-taA"/>
+                            <constraint firstAttribute="bottom" secondItem="KFs-x7-znj" secondAttribute="bottom" id="Khg-Gh-oVI"/>
+                            <constraint firstItem="KFs-x7-znj" firstAttribute="leading" secondItem="xSH-Nm-GiE" secondAttribute="leading" id="Mcc-sW-YuO"/>
+                            <constraint firstItem="KFs-x7-znj" firstAttribute="trailing" secondItem="xSH-Nm-GiE" secondAttribute="trailing" id="Tuk-10-ENE"/>
+                            <constraint firstItem="KFs-x7-znj" firstAttribute="top" secondItem="FKf-lL-1mf" secondAttribute="top" id="bGx-Yk-Wyk"/>
+                            <constraint firstItem="BQH-2Q-neX" firstAttribute="top" secondItem="xSH-Nm-GiE" secondAttribute="top" constant="40" id="y6Y-0q-Rkh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EfI-xt-SAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962.3188405797102" y="10.714285714285714"/>
         </scene>
         <!--Place to Eat-->
         <scene sceneID="e71-Gj-2fP">
@@ -399,6 +455,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="imgonline-com-ua-Transparent-backgr-0C6JDJWV0bF" width="60" height="60"/>
+        <image name="map" width="50" height="50"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
