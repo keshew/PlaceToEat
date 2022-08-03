@@ -14,14 +14,18 @@ class MapViewController: UIViewController {
     var place = Place()
     var annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
+    let regionInMerets: Double = 10_000
+    var incomeSegueIdentifier = ""
     
     @IBOutlet var mapView: MKMapView!
-
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var adressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlacemark()
+        setupMapView()
         checkLocationServices()
     }
     
@@ -89,6 +93,7 @@ class MapViewController: UIViewController {
             break
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSegueIdentifier == "getAdress" { showUserLocation() }
             break
 
         @unknown default:
@@ -103,10 +108,41 @@ class MapViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    private func showUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMerets,
+                                            longitudinalMeters: regionInMerets)
+            mapView.setRegion(region, animated: true )
+        }
+    }
+    
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showMap" {
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
+    }
+    
+    @IBAction func centerViewInUserLocation() {
+        
+        showUserLocation()
+        
+    }
+    
     @IBAction func closeVC() {
         dismiss(animated: true)
     }
     
+
+    @IBAction func doneButtonPressed() {
+        
+        
+        
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
