@@ -188,6 +188,9 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                            <size key="value" width="44" height="44"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
@@ -359,7 +362,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-F1-mkk">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-F1-mkk">
                                                             <rect key="frame" x="0.0" y="28" width="58" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                             <nil key="textColor"/>
@@ -374,44 +377,46 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Su-9x-bSY">
-                                                    <rect key="frame" x="248" y="25" width="158" height="35"/>
+                                                    <rect key="frame" x="283" y="25" width="123" height="35"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RdZ-Pr-19V" customClass="RationgControl" customModule="PlaceToEat" customModuleProvider="target">
-                                                            <rect key="frame" x="26" y="7.5" width="132" height="20"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oy7-rK-IeX" customClass="RationgControl" customModule="PlaceToEat" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="9.5" width="107" height="15"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                                     <integer key="value" value="5"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="size" keyPath="starSize">
-                                                                    <size key="value" width="20" height="20"/>
+                                                                    <size key="value" width="15" height="15"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="158" id="llk-Qg-ZKV"/>
+                                                        <constraint firstAttribute="height" constant="35" id="jVQ-er-9kL"/>
+                                                        <constraint firstAttribute="width" constant="123" id="tOe-p7-WNS"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="8Su-9x-bSY" firstAttribute="top" secondItem="ZDw-gi-D6v" secondAttribute="top" constant="25" id="2vL-Ja-txi"/>
                                                 <constraint firstItem="fKk-En-HT0" firstAttribute="leading" secondItem="ZDw-gi-D6v" secondAttribute="leading" constant="15" id="79t-XW-HNl"/>
-                                                <constraint firstItem="8Su-9x-bSY" firstAttribute="top" secondItem="ZDw-gi-D6v" secondAttribute="topMargin" constant="14" id="D78-OA-Wdb"/>
                                                 <constraint firstItem="fKk-En-HT0" firstAttribute="centerY" secondItem="ZDw-gi-D6v" secondAttribute="centerY" id="Hud-mg-Yk0"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Su-9x-bSY" secondAttribute="bottom" constant="25" id="PXF-LJ-5nQ"/>
                                                 <constraint firstItem="D4r-kP-eJb" firstAttribute="leading" secondItem="fKk-En-HT0" secondAttribute="trailing" constant="16" id="R0Q-N0-9NQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="D4r-kP-eJb" secondAttribute="bottom" constant="8" id="Xs9-ln-XBz"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Su-9x-bSY" secondAttribute="trailing" constant="8" id="ZkQ-Zo-u6U"/>
                                                 <constraint firstItem="D4r-kP-eJb" firstAttribute="top" secondItem="ZDw-gi-D6v" secondAttribute="top" constant="8" id="bn8-LT-WXh"/>
                                                 <constraint firstItem="fKk-En-HT0" firstAttribute="top" secondItem="ZDw-gi-D6v" secondAttribute="top" constant="10" id="iP6-Er-rx3"/>
-                                                <constraint firstAttribute="trailing" secondItem="8Su-9x-bSY" secondAttribute="trailing" constant="8" id="lnz-Nh-IST"/>
-                                                <constraint firstItem="8Su-9x-bSY" firstAttribute="centerY" secondItem="ZDw-gi-D6v" secondAttribute="centerY" id="xzc-LT-yEa"/>
+                                                <constraint firstItem="8Su-9x-bSY" firstAttribute="leading" secondItem="ZDw-gi-D6v" secondAttribute="trailing" constant="-131" id="iXv-A9-1gf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageOfPlace" destination="fKk-En-HT0" id="V44-eU-ph9"/>
                                             <outlet property="locationLabel" destination="pP9-F1-mkk" id="g7b-xa-iLa"/>
                                             <outlet property="nameLabel" destination="2Kf-dg-Z9T" id="K61-An-KLE"/>
-                                            <outlet property="starRatingOnMain" destination="RdZ-Pr-19V" id="qxJ-yI-g63"/>
+                                            <outlet property="starRatingOnMain" destination="oy7-rK-IeX" id="JCw-I8-iWp"/>
                                             <outlet property="typeLabel" destination="WUL-3S-pTD" id="B1y-Ao-dzO"/>
                                             <segue destination="7hf-pV-iCZ" kind="show" identifier="showDetail" id="ex4-vz-aIb"/>
                                         </connections>
@@ -508,10 +513,10 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="RdZ-Pr-19V">
+        <designable name="f4y-8n-Ydi">
             <size key="intrinsicContentSize" width="252" height="44"/>
         </designable>
-        <designable name="f4y-8n-Ydi">
+        <designable name="oy7-rK-IeX">
             <size key="intrinsicContentSize" width="252" height="44"/>
         </designable>
     </designables>
