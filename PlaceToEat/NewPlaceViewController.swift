@@ -117,6 +117,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
               let mapVC = segue.destination as? MapViewController else { return }
         
         mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
         
         if identifier == "showMap" {
         mapVC.place.name = placeName.text!
@@ -211,3 +212,9 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
         
 }
 
+extension NewPlaceViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+        
+    }
+}
